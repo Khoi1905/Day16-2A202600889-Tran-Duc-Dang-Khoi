@@ -9,148 +9,168 @@ companion-reference: Strategyn_JTBD_Playbook.pdf (giảng viên gửi kèm)
 
 # Lab 2 — JTBD Project Analysis / Dùng JTBD để soi lại dự án nhóm
 
-**Tên dự án / sản phẩm:** AI hỗ trợ chủ shop online phản hồi câu hỏi trước mua hàng
+**Tên dự án / sản phẩm:** Trợ Lý Đặt Xe An Toàn (V-VoiceRide)
+
+> Nguồn đầu vào cho bản phân tích: Product Brief, PRD, Strategyn JTBD Playbook và bản tham khảo từ repo của Bùi Ngọc Khánh. Những mô tả về hành vi người dùng chưa được kiểm chứng bằng phỏng vấn thực tế được ghi rõ là giả thuyết cần validate.
 
 ## Bước 0 — Khoanh đúng 1 lát cắt của dự án
 
-- **Dự án của nhóm tôi là:** Công cụ hỗ trợ chủ shop online trả lời inbox/comment trước mua hàng nhanh và nhất quán hơn.
-- **Lát cắt tôi chọn để phân tích hôm nay là:** Chủ shop online trong giờ cao điểm, khi có nhiều inbox/comment hỏi về giá, size, tồn kho, phí ship, thời gian giao hàng và đổi trả.
+- [x] **1 nhóm người dùng chính**
+- [x] **1 hoàn cảnh / tình huống rõ**
+- [x] **1 job cốt lõi**
+- [x] **1 workflow đủ cụ thể để vẽ ra được**
+
+- **Dự án của nhóm tôi là:** Trợ lý giúp người dùng đặt một chuyến xe giả lập bằng hội thoại tiếng Việt, có cơ chế hỏi lại, sửa thông tin và xác nhận an toàn.
+- **Lát cắt tôi chọn để phân tích hôm nay là:** Người lớn tuổi hoặc người ít thành thạo công nghệ tự sắp xếp chuyến xe đi bệnh viện, trong bối cảnh họ khó nhập địa chỉ, khó đọc thông tin nhỏ hoặc khó kiểm tra nhiều bước trên ứng dụng gọi xe.
 - **Vì sao tôi chọn lát cắt này:**  
-  > Đây là tình huống đủ cụ thể để map workflow: khách đang có ý định mua nhưng cần được trả lời nhanh. Nếu phản hồi chậm hoặc sai, shop có thể mất đơn ngay.
+  > Đây là journey rõ nhất để đánh giá giá trị thật của dự án. Nếu điểm đón, điểm đến hoặc thông tin xe bị hiểu sai, hậu quả không chỉ là trải nghiệm kém mà còn là rủi ro an toàn. Lát cắt này cũng buộc nhóm nhìn AI như công cụ giảm effort và giảm lỗi, không chỉ như một voice interface để demo.
 
 ## Bước 1 — Project Snapshot
 
 1. **Nhóm tôi đang nghĩ mình đang giải quyết vấn đề gì?**  
-   > Chủ shop online bị quá tải khi phải trả lời nhiều câu hỏi lặp lại trước mua hàng trong giờ cao điểm, dẫn tới phản hồi chậm, thiếu nhất quán và bỏ lỡ cơ hội chốt đơn.
+   > Một số người lớn tuổi hoặc ít rành công nghệ gặp khó khi nhập địa chỉ, đọc thông tin nhỏ, xử lý nhiều lựa chọn và sửa dữ liệu sai trong app gọi xe. Việc đó khiến họ khó tự đặt chuyến, dễ nhầm điểm đón/điểm đến, hoặc phải phụ thuộc vào người khác.
 
 2. **Người dùng chính hiện nhóm đang nhắm tới là ai?**  
-   > Chủ shop online nhỏ hoặc nhân viên trực inbox/comment cho shop trên Facebook, TikTok Shop, Shopee hoặc Instagram.
+   > Người lớn tuổi hoặc người ít thành thạo smartphone nhưng vẫn có nhu cầu tự sắp xếp chuyến đi bằng điện thoại. Người khiếm thị hoặc người bận tay/mắt có thể là secondary personas, nhưng không phải lát cắt chính của bài này.
 
 3. **Hiện tại người dùng đó đang giải quyết vấn đề này bằng cách nào?**  
-   > Tự trả lời thủ công, dùng mẫu copy-paste, tra bảng sản phẩm/chính sách, nhờ nhân viên phụ trực chat, hoặc thử dùng chatbot rule-based/ChatGPT rời rạc.
+   > Giả thuyết hiện tại là họ tự thao tác trên Grab/Be hoặc app tương tự, gọi tổng đài taxi, nhờ người thân đặt hộ, hoặc trì hoãn chuyến đi nếu không đủ tự tin. PRD hiện mới dừng ở giả thuyết, nên cần interview để xác nhận alternative nào phổ biến nhất.
 
 ## Bước 2 — Market Context
 
 1. **Ai đang gặp vấn đề này?**  
-   > Chủ shop online nhỏ, người bán livestream, nhân viên CSKH/sales inbox phải trả lời khách trước mua hàng.
+   > Người lớn tuổi hoặc người ít thành thạo smartphone, đặc biệt khi thị lực, khả năng nhập liệu hoặc khả năng xử lý giao diện nhiều bước bị hạn chế.
 
 2. **Vấn đề xuất hiện trong hoàn cảnh nào?**  
-   > Khi chạy ads, livestream, flash sale hoặc giờ cao điểm buổi tối, nhiều khách hỏi cùng lúc về thông tin sản phẩm và chính sách mua hàng.
+   > Khi họ cần tự sắp xếp chuyến đi như đi bệnh viện, nhưng phải nhập/chọn địa chỉ, kiểm tra điểm đón và điểm đến, sửa lỗi, xác nhận giá/ETA, rồi nhận diện đúng xe trong một giao diện thiên về thị giác.
 
 3. **Hiện tại họ đang dùng giải pháp thay thế nào?**  
-   > Trả lời tay, copy-paste mẫu, thuê người trực inbox, dùng chatbot rule-based, dùng ghi chú/bảng tính, hoặc hỏi ChatGPT rồi chỉnh lại.
+   > App gọi xe truyền thống, tổng đài taxi, nhờ người thân hoặc người chăm sóc đặt hộ, hoặc tự đi bằng phương tiện khác. Danh sách này vẫn là giả thuyết và cần kiểm chứng bằng người dùng thật.
 
 4. **Vì sao đây là thời điểm đáng giải?**  
-   > Người mua kỳ vọng phản hồi gần như ngay lập tức, còn shop nhỏ thường thiếu nhân sự trực chat liên tục. AI đã đủ tốt để hỗ trợ nhận diện câu hỏi lặp lại và soạn nháp câu trả lời theo ngữ cảnh, nhưng vẫn cần kiểm soát thông tin quan trọng.
+   > STT, TTS và LLM tiếng Việt đã tốt hơn trước, đủ để thử một luồng hội thoại tự nhiên hơn. Tuy vậy, việc tự động hóa một hành động có rủi ro như đặt xe vẫn cần guardrail rõ: không để AI tự đoán địa chỉ, không tự xác nhận chuyến, và phải đọc lại thông tin quan trọng trước khi user đồng ý.
 
-### Tóm tắt market context trong 3-4 dòng
+### Tóm tắt market context
 
-> Shop online nhỏ sống nhờ tốc độ phản hồi và độ tin của tư vấn trước mua hàng. Trong giờ cao điểm, chủ shop hoặc nhân viên trực chat phải vừa hiểu câu hỏi, vừa tra thông tin sản phẩm/chính sách, vừa trả lời đủ nhanh để không mất khách. Các giải pháp hiện tại rẻ nhưng dễ chậm, sai hoặc thiếu nhất quán. Cơ hội nằm ở việc hỗ trợ đúng bước tra cứu và soạn phản hồi, không thay toàn bộ người bán.
+> Thị trường không nên được định nghĩa là "voice booking app", mà là nhóm người gặp hạn chế thao tác số đang cố sắp xếp phương tiện để di chuyển an toàn và tự chủ. Hiện họ phải ghép nhiều giải pháp: tự vật lộn với app, gọi tổng đài hoặc nhờ người khác. Cơ hội của dự án nằm ở việc giảm effort, giảm sai sót và tăng cảm giác kiểm soát, trong khi vẫn giữ quyền quyết định cuối cùng ở user.
 
 ## Bước 3 — Xác định Job Executor
 
-- **Job executor của dự án này là:** Chủ shop online hoặc nhân viên trực inbox/comment trực tiếp trả lời khách trước mua hàng.
+- **Job executor của dự án này là:** Người lớn tuổi hoặc người ít thành thạo công nghệ đang trực tiếp tự sắp xếp chuyến đi của mình.
 - **Vì sao tôi tin đây là người trực tiếp "thuê" giải pháp để làm job:**  
-  > Đây là người trực tiếp đọc câu hỏi, tìm thông tin sản phẩm/chính sách, soạn câu trả lời và chịu áp lực nếu khách bỏ đi. Buyer có thể là chủ shop, nhưng job executor trong workflow thực tế là người đang trực chat.
+  > Chính họ xác định nhu cầu di chuyển, cung cấp điểm đón/điểm đến, chọn phương tiện, kiểm tra thông tin, yêu cầu sửa và quyết định xác nhận chuyến. Người thân có thể là buyer, influencer hoặc người hỗ trợ, nhưng trong lát cắt này không phải người trực tiếp hoàn thành job.
 
 ## Bước 4 — Core JTBD
 
 ### Bản nháp 1
 
 **Core JTBD bản nháp:**  
-> Trả lời câu hỏi trước mua hàng bằng AI cho khách online trong giờ cao điểm.
+> Đặt xe bằng giọng nói để đi đúng nơi an toàn.
 
 ### Gạch bỏ từ solution nếu có
 
-- Các từ solution tôi đang lỡ nhét vào câu: AI
+- Các từ solution tôi đang lỡ nhét vào câu: `đặt xe`, `bằng giọng nói`
 
 ### Bản chốt
 
 **Core JTBD cuối cùng:**  
-> Giải quyết câu hỏi trước mua hàng nhanh, chính xác và nhất quán trong giờ cao điểm để không mất đơn.
+> Sắp xếp phương tiện để di chuyển từ điểm đón đến đúng điểm đến một cách an toàn và tự chủ khi khả năng nhập hoặc kiểm tra thông tin bị hạn chế.
+
+### Tự kiểm
+
+- [x] Nếu bỏ V-VoiceRide, voice hay AI, job này vẫn tồn tại.
+- [x] Câu không chứa tên sản phẩm, AI, chatbot, app hoặc giao diện.
+- [x] Câu mô tả điều user muốn hoàn thành, không mô tả tính năng.
 
 ## Bước 5 — 3 Job Stories
 
 | # | Trigger / When | Motivation / I want to | Outcome / so I can | Điều story này cho thấy |
 |---|---|---|---|---|
-| JS1 | Khi livestream hoặc chạy ads làm inbox/comment đổ dồn trong vài phút | Tôi muốn hiểu nhanh khách đang hỏi gì và trả lời đúng thông tin sản phẩm | Tôi có thể giữ khách đang nóng nhu cầu mua thay vì để họ chờ rồi rời đi | Pain lớn nằm ở tốc độ hiểu câu hỏi và phản hồi trong cao điểm |
-| JS2 | Khi nhiều khách hỏi lặp lại về size, giá, tồn kho, phí ship và đổi trả | Tôi muốn có câu trả lời nhất quán dựa trên thông tin shop đang dùng | Tôi có thể giảm sai sót và không phải gõ lại cùng một nội dung hàng chục lần | Pain nằm ở câu hỏi lặp lại nhưng vẫn cần đúng ngữ cảnh |
-| JS3 | Khi khách hỏi thêm một câu cuối trước khi quyết định mua | Tôi muốn phản hồi nhanh, rõ và đủ tin để khách yên tâm | Tôi có thể tăng khả năng chốt đơn trước khi khách chuyển sang shop khác | Pain nằm ở thời điểm cận chốt đơn, nơi phản hồi chậm làm mất doanh thu |
+| JS1 | Khi cần tự đi bệnh viện nhưng khó nhập một địa chỉ dài trên điện thoại | Tôi muốn truyền đạt rõ nơi đón và nơi cần đến, rồi kiểm tra hệ thống đã hiểu đúng | Tôi có thể tự sắp xếp chuyến đi mà không phải nhờ người thân | Giá trị nằm ở tự chủ và an toàn, không chỉ ở tốc độ đặt xe |
+| JS2 | Khi phát hiện điểm đón hoặc điểm đến được hiểu sai trước lúc xác nhận | Tôi muốn sửa đúng phần sai mà không phải cung cấp lại toàn bộ thông tin | Tôi giảm công sức, bớt bối rối và tránh tạo nhầm chuyến | Correction là một phần lõi của job, không phải edge feature |
+| JS3 | Khi phương tiện sắp tới và tôi cần nhận diện đúng xe | Tôi muốn nghe lại thông tin tài xế, màu xe, biển số và trạng thái một cách rõ ràng | Tôi có thể lên đúng xe và cảm thấy an toàn hơn | Job không kết thúc ở "booking created"; user còn phải xác định đúng phương tiện |
+
+### Tự kiểm nhanh
+
+- [x] Mỗi story mô tả một tình huống cụ thể.
+- [x] Ba story đại diện cho ba thời điểm khác nhau: khởi tạo, sửa lỗi và nhận diện xe.
+- [x] Các story là giả thuyết dựa trên PRD, cần phỏng vấn để kiểm chứng tần suất và mức đau.
 
 ## Bước 6 — Current Alternatives
 
 | Alternative hiện tại | User đang thuê nó để làm gì? | Nó làm tốt gì? | Nó fail ở đâu? | Switching cost hiện tại cao hay thấp? |
 |---|---|---|---|---|
-| Tự trả lời thủ công | Đọc từng inbox/comment, tra thông tin, gõ phản hồi | Linh hoạt, hiểu ngữ cảnh shop, kiểm soát chất lượng | Chậm khi nhiều khách, dễ mệt, dễ bỏ sót, khó nhất quán | Thấp, vì không cần học tool mới |
-| Copy-paste mẫu chat | Trả lời nhanh các câu hỏi lặp lại | Rẻ, dễ dùng, nhanh với câu hỏi đơn giản | Dễ sai ngữ cảnh, phải tự chọn mẫu, khó cập nhật theo tồn kho/chính sách | Thấp |
-| Thuê nhân viên/intern CSKH | Tăng người trực chat và chia tải | Có người thật xử lý linh hoạt | Tốn chi phí, cần training, vẫn sai nếu thông tin phân tán | Trung bình |
-| Chatbot rule-based hoặc ChatGPT thủ công | Tự động hóa một phần câu trả lời | Tốt với câu hỏi phổ biến hoặc soạn nháp nhanh | Rule cứng, thiếu dữ liệu shop; ChatGPT rời rạc dễ bịa nếu không có catalog/chính sách | Trung bình |
+| Tự dùng Grab/Be hoặc app gọi xe tương tự | Tìm chuyến, nhập địa chỉ, xem giá/ETA và theo dõi tài xế | Có marketplace thật, nhiều tài xế, quen thuộc, có bản đồ và thanh toán | Tạo tải nhận thức cao; phụ thuộc nhập liệu, đọc màn hình và tự sửa lỗi | Cao ở giá trị marketplace và thói quen; thấp nếu chỉ xét giao diện hỗ trợ |
+| Nhờ người thân hoặc người chăm sóc đặt hộ | Chuyển phần thao tác và kiểm tra cho người đáng tin | Linh hoạt, có người xử lý tình huống và giải thích | Làm giảm tự chủ, phụ thuộc người khác có mặt/online, vẫn có thể truyền đạt sai địa chỉ | Cao về niềm tin; thấp nếu user thật sự muốn tự làm |
+| Gọi tổng đài taxi hoặc gọi trực tiếp hãng xe | Nói nhu cầu cho nhân viên và nhận xe | Giao tiếp bằng giọng nói quen thuộc, không cần học app | Có thể phải chờ, khó kiểm tra trực quan, chất lượng phụ thuộc tổng đài và vẫn có rủi ro nghe/truyền đạt sai | Trung bình |
 
 ### Kết luận nhanh
 
 **Nếu project của tôi biến mất hôm nay, user nhiều khả năng sẽ quay về:**  
-> Tự trả lời thủ công kết hợp copy-paste mẫu chat và nhờ nhân viên phụ khi quá tải.
+> Nếu thiếu tự tin, họ nhiều khả năng nhờ người thân đặt hộ. Nếu vẫn muốn tự làm, họ sẽ dùng app gọi xe hiện có hoặc gọi tổng đài. Thứ tự này là giả thuyết cần xác nhận qua interview.
 
 ## Bước 7 — JTBD Lite Map
 
+> Job map dưới đây mô tả điều user cố hoàn thành, không mô tả màn hình hay state machine của V-VoiceRide.
+
 | Step | Trong workflow này user đang cố làm gì? | Hôm nay họ đang dùng gì? | Friction / pain hiện tại | Mức đau |
 |---|---|---|---|---|
-| Define | Hiểu khách đang hỏi về sản phẩm, chính sách hay ý định mua | Đọc inbox/comment bằng mắt, tự phân loại | Nhiều câu hỏi cùng lúc, câu hỏi viết tắt/sai chính tả, dễ hiểu nhầm | Med |
-| Locate | Tìm thông tin đúng về giá, size, tồn kho, ship, đổi trả | Ghi chú, bảng sản phẩm, trí nhớ, hỏi nhân viên khác | Thông tin nằm rải rác, cập nhật không kịp, dễ trả lời sai | High |
-| Prepare | Soạn câu trả lời phù hợp với câu hỏi và giọng shop | Gõ tay, copy-paste mẫu, chỉnh lại câu cũ | Tốn thời gian, câu trả lời thiếu cá nhân hóa, dễ lặp máy móc | High |
-| Confirm | Kiểm tra lại thông tin quan trọng trước khi gửi | Tự đối chiếu tồn kho/giá/chính sách | Bước này hay bị bỏ qua khi quá tải, gây sai thông tin | High |
-| Execute | Gửi phản hồi cho khách ở đúng kênh | Messenger, comment, TikTok/Shopee chat | Chậm nếu phải chuyển qua nhiều tab/kênh | Med |
-| Monitor | Theo dõi khách có phản hồi, hỏi tiếp hay bỏ đi | Nhìn notification, tự nhớ khách nào cần follow-up | Dễ sót khách, không biết ai đang gần chốt | Med |
-| Modify | Điều chỉnh câu trả lời khi khách đổi nhu cầu hoặc hỏi thêm | Gõ lại thủ công, sửa mẫu | Cần giữ ngữ cảnh hội thoại, dễ trả lời lệch | Med |
-| Conclude | Chốt đơn, gửi link mua, lưu lead hoặc kết thúc hội thoại | Gửi link, nhập đơn, đánh dấu thủ công | Dữ liệu sau chat không được lưu có cấu trúc, khó học lại pattern | Low |
+| Define | Xác định mục tiêu chuyến đi, thời điểm, điểm đón, điểm đến và nhu cầu phương tiện | Trí nhớ, giấy ghi chú, hỏi người thân, app bản đồ | Có thể không biết địa chỉ chính xác hoặc khó diễn đạt đủ yêu cầu | Med |
+| Locate | Tìm đúng địa chỉ và phương án vận chuyển phù hợp | App gọi xe, bản đồ, tìm kiếm web, hỏi người thân/tổng đài | Địa danh mơ hồ, nhiều chi nhánh/lối vào, chữ nhỏ và nhiều lựa chọn | High |
+| Prepare | Chuẩn bị thông tin và điều kiện cần để yêu cầu chuyến | Nhập địa chỉ, bật vị trí, chuẩn bị điện thoại/tài khoản/phương thức trả | Nhập liệu dài, quyền truy cập, thông tin phân tán và dễ quên bước | Med |
+| Confirm | Kiểm tra phương tiện, điểm đón, điểm đến, ETA/chi phí trước khi cam kết | Đọc summary trên màn hình hoặc nghe nhân viên nhắc lại | Dễ bỏ sót thông tin sai; một nút xác nhận có thể bị bấm khi chưa hiểu rõ | High |
+| Execute | Gửi yêu cầu và bảo đảm chuyến đã được ghi nhận | Bấm đặt xe trên app hoặc xác nhận với tổng đài/người thân | Không chắc yêu cầu đã thành công; dễ nhầm trạng thái đang xử lý với đã đặt | Med |
+| Monitor | Theo dõi phương tiện được gán, vị trí/ETA và trạng thái đến đón | Bản đồ, thông báo, cuộc gọi tài xế | Khó đọc bản đồ/thông báo, khó biết khi nào xe tới hoặc có thay đổi | Med |
+| Modify | Sửa điểm đón, điểm đến, loại xe hoặc xử lý khi thông tin sai/thay đổi | Quay lại form, hủy và đặt lại, gọi tài xế/tổng đài/người thân | Dễ mất thông tin đúng, phải làm lại nhiều bước, sợ tạo nhầm chuyến | High |
+| Conclude | Xác định đúng xe và bắt đầu chuyến đi an toàn | Đọc biển số/màu xe, nhìn tài xế, gọi điện đối chiếu | Chữ/biển số khó nhìn, nhiều xe giống nhau, nguy cơ lên nhầm xe | High |
 
 ### Chốt 2 bước đau nhất
 
-**Bước đau nhất #1:** Locate  
-**Bước đau nhất #2:** Prepare + Confirm
+**Bước đau nhất #1:** `Locate` — xác định và chọn đúng điểm đón/điểm đến  
+**Bước đau nhất #2:** `Modify` — sửa đúng phần sai mà không phải làm lại từ đầu
 
 **Vì sao đây là nơi đáng chú ý nhất:**  
-> Nếu không tìm đúng thông tin, shop trả lời nhanh cũng vô ích vì có thể sai giá, sai tồn kho hoặc sai chính sách. Nếu soạn câu trả lời chậm hoặc thiếu nhất quán, khách có thể chuyển sang shop khác trước khi được tư vấn đủ rõ.
+> Locate sai sẽ làm toàn bộ chuyến đi sai ngay từ đầu. Modify kém sẽ làm user mất kiểm soát đúng lúc họ đã biết hệ thống hiểu sai. Confirm và Conclude cũng rất quan trọng về an toàn, nhưng ở đó giá trị chính là guardrail và read-back, không phải để AI tự quyết định.
 
 ## Bước 8 — AI Leverage Point
 
 | Step | AI nên giúp bằng cách nào? | Vì sao AI hợp ở đây? | Rủi ro chính nếu dùng AI |
 |---|---|---|---|
-| Locate | Nhận diện ý định câu hỏi và truy xuất thông tin liên quan từ catalog, FAQ, chính sách, tồn kho đã được shop cung cấp | Câu hỏi lặp lại nhiều, có thể map sang dữ liệu bán hàng có cấu trúc | Nếu dữ liệu shop cũ hoặc thiếu, AI có thể gợi ý sai |
-| Prepare + Confirm | Soạn nháp câu trả lời theo giọng shop và highlight thông tin cần người bán kiểm tra trước khi gửi | AI mạnh ở tổng hợp ngữ cảnh và tạo phản hồi nhanh, còn người bán giữ quyền kiểm soát điểm rủi ro | AI có thể bịa, trả lời quá tự tin, hoặc dùng wording không phù hợp thương hiệu |
+| Locate | Hiểu cách nói địa chỉ tự nhiên, trích xuất điểm đón/điểm đến, phát hiện phần thiếu hoặc mơ hồ và hỏi lại ngắn gọn | Input ngôn ngữ có nhiều biến thể; LLM phù hợp để hiểu intent/context, còn geocoding cung cấp candidate có cấu trúc | AI tự đoán địa chỉ hoặc chọn candidate sai; STT nghe sai tên riêng/địa danh |
+| Modify | Hiểu user muốn sửa slot nào và giá trị mới là gì, đồng thời giữ nguyên phần thông tin không liên quan | Yêu cầu sửa bằng lời nói thường không theo form cố định; hiểu ngữ nghĩa giúp giảm việc phải làm lại toàn bộ | Cập nhật nhầm slot, làm mất state cũ hoặc diễn giải quá mức ý của user |
 
 ### Kết luận nhanh
 
 **AI leverage point quan trọng nhất của dự án tôi là:**  
-> Hỗ trợ Locate + Prepare + Confirm: AI gợi ý câu trả lời dựa trên dữ liệu sản phẩm/chính sách của shop, đồng thời nhắc người bán kiểm tra các trường nhạy cảm như tồn kho, giá, đổi trả trước khi gửi.
+> Hiểu và sửa thông tin chuyến đi từ ngôn ngữ tự nhiên ở hai bước Locate và Modify, sau đó chuyển kết quả có cấu trúc cho state machine kiểm tra.
 
 **Vì sao không phải ở bước khác:**  
-> Execute và Monitor cũng có thể tối ưu, nhưng nếu câu trả lời chưa đúng và chưa đủ tin, tự động gửi nhanh chỉ làm tăng rủi ro. Giá trị lớn nhất nằm trước khi gửi: tìm đúng thông tin, soạn đúng câu, và kiểm tra điểm có thể gây mất đơn hoặc khiếu nại.
+> Ở Confirm và Execute, vấn đề chính là consent và kiểm soát rủi ro; AI không nên tự quyết định. State machine phải chặn booking khi thiếu slot, địa chỉ còn mơ hồ hoặc chưa có xác nhận rõ. Ở Monitor/Conclude, TTS và dữ liệu có cấu trúc hữu ích hơn việc để LLM suy đoán.
 
 ## Bước 9 — Product Hypothesis
 
 ### Bản hypothesis của tôi
 
-> Nếu chúng ta giúp chủ shop online hoặc nhân viên trực inbox giải quyết câu hỏi lặp lại trước mua hàng tốt hơn ở bước Locate + Prepare + Confirm, bằng cách gợi ý câu trả lời theo catalog và chính sách shop, thì họ sẽ chuyển từ trả lời thủ công/copy-paste sang giải pháp của nhóm, vì họ giảm thời gian phản hồi trong giờ cao điểm mà vẫn giữ kiểm soát chất lượng câu trả lời.
+> Nếu chúng ta giúp người lớn tuổi hoặc ít thành thạo công nghệ xác định và sửa thông tin chuyến đi tốt hơn ở các bước Locate và Modify, bằng cách dùng AI hiểu hội thoại tiếng Việt nhưng bắt buộc mọi dữ liệu rủi ro đi qua geocoding, read-back và state machine, thì họ sẽ có xu hướng chuyển từ nhờ người thân hoặc vật lộn với form app sang một luồng hội thoại safety-first, vì họ có thể tự hoàn thành chuyến với ít thao tác hơn mà vẫn kiểm soát được thông tin trước khi xác nhận.
 
 ### Tín hiệu sớm nếu hypothesis này đúng
 
-1. Chủ shop chấp nhận dùng gợi ý trả lời trong các ca cao điểm và gửi ít nhất 30-50% câu trả lời từ nháp được đề xuất sau khi chỉnh nhẹ.
-2. Thời gian phản hồi trung bình cho câu hỏi lặp lại giảm rõ rệt, trong khi số lỗi về giá/tồn kho/chính sách không tăng.
+1. Trong usability test, ít nhất 80% người tham gia thuộc lát cắt có thể hoàn thành scenario hợp lệ; correction success đạt ít nhất 70% mà không cần người hỗ trợ thao tác thay.
+2. Người tham gia đánh giá mức tin tưởng/tự chủ từ 4/5 trở lên và chủ động chọn luồng này thay vì nhờ người thân trong ít nhất một tình huống thử nghiệm phù hợp.
 
 ## Bước 10 — Assumptions to Validate
 
 | Assumption | Vì sao assumption này rủi ro? | Tôi đang có bằng chứng gì? | Cần validate bằng cách nào tiếp theo? |
 |---|---|---|---|
-| A1: Pain trả lời inbox/comment trong giờ cao điểm xảy ra đủ thường xuyên | Nếu shop chỉ thỉnh thoảng quá tải, họ không có động lực đổi workflow | Quan sát phổ biến từ hành vi bán hàng online, nhưng chưa có phỏng vấn người dùng thật | Phỏng vấn 5-7 chủ shop/nhân viên trực chat về số lượng câu hỏi mỗi ca cao điểm |
-| A2: Chủ shop có dữ liệu sản phẩm/chính sách đủ sạch để AI dùng | Nếu dữ liệu phân tán hoặc sai, gợi ý sẽ không đáng tin | Giả định từ việc shop thường có bảng giá, ảnh sản phẩm, chính sách ship/đổi trả | Xin sample catalog/FAQ từ 2-3 shop và thử map thành dữ liệu đầu vào |
-| A3: Người bán tin gợi ý AI đủ để dùng trong chat thật | Nếu họ luôn phải kiểm tra lại từ đầu, sản phẩm không tiết kiệm thời gian | Bằng chứng hiện tại còn yếu, mới dựa trên logic workflow | Prototype nháp trả lời, cho người bán đánh giá độ đúng và mức chỉnh sửa cần thiết |
-| A4: Người bán sẵn sàng chuyển khỏi copy-paste/thủ công | Workflow cũ rẻ và quen thuộc, dù chậm | Có logic pain nhưng chưa đo switching cost thật | Test landing/prototype trong 1 tuần với shop nhỏ, đo tần suất dùng lại |
-| A5: Tốc độ phản hồi ảnh hưởng conversion đủ mạnh | Nếu khách không mua vì lý do khác như giá/sản phẩm, tốc độ trả lời không đủ tạo value | Bằng chứng hiện tại còn yếu, chưa đo bằng dữ liệu bán hàng của shop thật | So sánh đơn/chốt lead giữa nhóm câu hỏi được trả lời nhanh và nhóm bị trễ |
+| A1: Người lớn tuổi/ít rành công nghệ là job executor phù hợp và thật sự muốn tự đặt chuyến | Có thể người thân mới luôn là người thực hiện job; user không muốn hoặc không được phép tự làm | Persona và journey trong PRD, nhưng bằng chứng người dùng thật còn yếu | Phỏng vấn 5-8 người dùng mục tiêu và 3-5 người chăm sóc; hỏi về chuyến gần nhất, không hỏi họ có thích ý tưởng không |
+| A2: Locate và Modify là hai pain đủ lớn, xảy ra đủ thường xuyên | Team có thể đang ưu tiên edge case trong khi pain chính là giá, thiếu tài xế hoặc thanh toán | Critical scenarios và risk analysis nội bộ trong PRD | Contextual interview/usability test trên app hiện tại; ghi số lần cần trợ giúp, lỗi và thời gian ở từng step |
+| A3: Voice/hội thoại giảm effort tốt hơn form hoặc accessibility mode hiện có | Môi trường ồn, giọng vùng miền hoặc STT sai có thể làm voice chậm và đáng sợ hơn | Technical concept và scenario test, nhưng chưa được so sánh trực tiếp với người dùng | Prototype test A/B voice-first với form đơn giản; đo completion, correction, time, confidence và preference |
+| A4: User đủ tin hệ thống sau read-back và explicit confirmation | Việc AI nghe sai một lần có thể làm user mất niềm tin; câu xác nhận bắt buộc có thể gây khó nhớ | Safety invariants trong PRD, nhưng cần thêm bằng chứng hành vi | Test nhiều cách read-back/xác nhận; quan sát user có hiểu trạng thái và tự phát hiện lỗi hay không |
+| A5: User sẽ chuyển khỏi alternative hiện tại dù MVP chưa gọi xe thật | Demo booking không tạo đủ giá trị để kiểm chứng switching; marketplace và độ tin cậy của app hiện tại là moat lớn | Bằng chứng hiện tại còn yếu; MVP chủ yếu chứng minh interaction | Test concierge hoặc clickable prototype nối với quy trình đặt xe có người hỗ trợ; hỏi lựa chọn trong tình huống thật và willingness to adopt |
 
 ### Assumption nguy hiểm nhất nếu tôi đang sai
 
-> A2 là nguy hiểm nhất: nếu dữ liệu sản phẩm/chính sách của shop không đủ sạch hoặc không được cập nhật, AI leverage point ở Locate + Prepare + Confirm sẽ tạo rủi ro trả lời sai thay vì tạo giá trị.
+> A1 là assumption nguy hiểm nhất: nếu người dùng mục tiêu không muốn hoặc không thể tự sắp xếp chuyến đi, product hypothesis sẽ yếu dù voice và safety flow hoạt động tốt. Khi đó người thân/tổng đài mới là actor chính cần thiết kế cho, không phải bản thân người đi.
 
 ## Bước 11 — Share trong bàn
 
@@ -158,7 +178,7 @@ companion-reference: Strategyn_JTBD_Playbook.pdf (giảng viên gửi kèm)
 
 | Ý phản biện tôi nghe được | Nó chạm vào phần nào? | Tôi sẽ giữ / sửa gì? |
 |---|---|---|
-| Bùi Ngọc Khánh góp ý: nếu shop có nhân viên trực chat riêng, cần phân biệt rõ buyer là chủ shop và job executor là người đang trực tiếp trả lời inbox/comment. Khánh cũng nhắc AI có thể trả lời sai tồn kho, giá khuyến mãi hoặc chính sách đổi trả nếu dữ liệu không cập nhật, nên không nên tự động gửi ngay. | Job executor, AI leverage point, Assumption A2/A3 | Giữ job executor là "chủ shop hoặc nhân viên trực inbox/comment", nhưng ghi rõ người trực tiếp làm job là người đang trả lời khách. Giữ AI leverage point ở Locate + Prepare + Confirm, trong đó Confirm phải có người bán kiểm soát trước khi gửi. |
+| Bùi Ngọc Khánh góp ý rằng core JTBD nên tránh chữ "đặt xe" vì đó đã hơi nghiêng về solution; job rộng hơn là sắp xếp phương tiện an toàn. Khánh cũng nhắc pain lớn nhất có thể không phải voice, mà là user có tin hệ thống đã hiểu đúng địa chỉ hay không. | Core JTBD, Locate/Confirm, Assumption A4 | Tôi giữ job executor là người trực tiếp tự sắp xếp chuyến đi, nhưng làm rõ core JTBD theo hướng "sắp xếp phương tiện". Tôi cũng giữ AI leverage ở Locate + Modify, đồng thời nhấn mạnh read-back/state machine ở Confirm để giảm rủi ro tin nhầm AI. |
 
 ## Bước 12 — Chốt version cuối sau thảo luận
 
@@ -166,8 +186,8 @@ companion-reference: Strategyn_JTBD_Playbook.pdf (giảng viên gửi kèm)
 
 - [x] Giữ nguyên `job executor`
 - [ ] Sửa `job executor`
-- [x] Giữ nguyên `core JTBD`
-- [ ] Sửa `core JTBD`
+- [ ] Giữ nguyên `core JTBD`
+- [x] Sửa `core JTBD`
 - [x] Giữ nguyên `AI leverage point`
 - [ ] Sửa `AI leverage point`
 - [x] Giữ nguyên `product hypothesis`
@@ -175,27 +195,27 @@ companion-reference: Strategyn_JTBD_Playbook.pdf (giảng viên gửi kèm)
 
 ### Vì sao tôi giữ / sửa?
 
-> Tôi giữ hướng phân tích vì job đủ cụ thể, workflow có điểm đau rõ và AI leverage point nằm ở bước trước khi gửi câu trả lời. Tuy nhiên tôi ghi rõ hơn rằng AI chỉ nên gợi ý và hỗ trợ kiểm tra, không tự động thay người bán ở các thông tin rủi ro như giá, tồn kho, đổi trả.
+> Tôi giữ job executor vì trong lát cắt này người trực tiếp hoàn thành job là người tự sắp xếp chuyến đi, không phải người thân. Tôi sửa cách diễn đạt core JTBD để bớt solution-oriented: trọng tâm là di chuyển an toàn, đúng nơi và tự chủ trong điều kiện khó nhập/kiểm tra thông tin. AI leverage point vẫn nằm ở Locate và Modify, nhưng cần được bao bởi geocoding, read-back và state machine để tránh AI tự quyết sai.
 
 ### Version cuối cùng tôi nộp
 
 **Job executor:**  
-> Chủ shop online hoặc nhân viên trực inbox/comment trực tiếp trả lời khách trước mua hàng.
+> Người lớn tuổi hoặc người ít thành thạo công nghệ đang trực tiếp tự sắp xếp chuyến đi của mình.
 
 **Core JTBD:**  
-> Giải quyết câu hỏi trước mua hàng nhanh, chính xác và nhất quán trong giờ cao điểm để không mất đơn.
+> Sắp xếp phương tiện để di chuyển từ điểm đón đến đúng điểm đến một cách an toàn và tự chủ khi khả năng nhập hoặc kiểm tra thông tin bị hạn chế.
 
 **2 bước đau nhất trong workflow:**  
-> Locate; Prepare + Confirm.
+> `Locate` — xác định đúng điểm đón/điểm đến; `Modify` — sửa đúng phần sai mà không phải làm lại từ đầu.
 
 **AI leverage point chính:**  
-> Gợi ý câu trả lời dựa trên catalog/chính sách shop ở bước Locate + Prepare + Confirm, kèm kiểm soát của người bán trước khi gửi.
+> Dùng AI để hiểu địa chỉ/yêu cầu sửa từ ngôn ngữ tự nhiên ở Locate và Modify, sau đó chuyển thành dữ liệu có cấu trúc cho geocoding, read-back và state machine kiểm tra.
 
 **Product hypothesis:**  
-> Nếu giúp người trực inbox trả lời câu hỏi lặp lại trước mua hàng nhanh và nhất quán hơn bằng gợi ý dựa trên dữ liệu shop, họ sẽ chuyển khỏi trả lời thủ công/copy-paste vì giảm thời gian phản hồi trong giờ cao điểm mà vẫn kiểm soát được độ đúng.
+> Nếu V-VoiceRide giúp người lớn tuổi hoặc ít thành thạo công nghệ xác định và sửa thông tin chuyến đi tốt hơn bằng hội thoại tiếng Việt có guardrail, họ sẽ có xu hướng chuyển từ nhờ người thân hoặc vật lộn với app form sang luồng safety-first, vì họ có thể tự hoàn thành chuyến với ít thao tác hơn mà vẫn kiểm soát được thông tin trước khi xác nhận.
 
 **Assumption cần validate đầu tiên:**  
-> Chủ shop có dữ liệu sản phẩm/chính sách đủ sạch và đủ cập nhật để AI dùng mà không tạo rủi ro trả lời sai.
+> Người dùng mục tiêu thật sự muốn và có khả năng tự sắp xếp chuyến đi, thay vì luôn muốn người thân hoặc tổng đài chịu trách nhiệm thay.
 
 ## Checklist trước khi nộp
 
@@ -207,3 +227,7 @@ companion-reference: Strategyn_JTBD_Playbook.pdf (giảng viên gửi kèm)
 - [x] Tôi đã chỉ ra `AI leverage point` thay vì nhảy thẳng vào feature list.
 - [x] Tôi đã ghi rõ `assumptions to validate`.
 - [x] Tôi đã sửa version cuối sau khi share trong bàn.
+
+## Kết luận tự kiểm
+
+> Nếu bỏ AI, dự án vẫn còn tạo giá trị ở read-back rõ ràng, giao diện dễ tiếp cận, sửa từng phần và guardrail xác nhận. AI làm tăng giá trị chủ yếu ở khả năng hiểu cách diễn đạt tự nhiên và correction linh hoạt; nó không phải nguồn quyết định an toàn cuối cùng.
