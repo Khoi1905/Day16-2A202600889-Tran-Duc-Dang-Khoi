@@ -9,490 +9,201 @@ companion-reference: Strategyn_JTBD_Playbook.pdf (giảng viên gửi kèm)
 
 # Lab 2 — JTBD Project Analysis / Dùng JTBD để soi lại dự án nhóm
 
-**Tên dự án / sản phẩm:** _______________  
-
-> Đây là **file duy nhất** của Lab 2.  
-> File này đồng thời đóng vai trò:
->
-> - guide từng bước,
-> - worksheet để điền trực tiếp,
-> - và file nộp cuối cho người chấm.
-
-Mục tiêu của bài này không phải brainstorm thêm thật nhiều tính năng AI.
-Mục tiêu là:
-
-1. **xác định người dùng thực sự đang cố hoàn thành job gì**
-2. **hiểu họ đang dùng giải pháp nào để hoàn thành job đó hôm nay**
-3. **chỉ ra AI nên chen vào đúng bước nào trong workflow**
-4. **viết ra product hypothesis và assumption còn phải validate**
-
-Quy tắc xuyên suốt: **không rõ job thì đừng bàn feature.**
-
----
-
-## Cần mở song song 2 thứ
-
-1. **File này** — để điền trực tiếp
-2. **`Strategyn_JTBD_Playbook.pdf`** — giảng viên gửi kèm
-
-### Cách dùng playbook cho đúng
-
-Bạn **không cần đọc hết 48 trang**.  
-Trong bài này, playbook chủ yếu dùng để tra 4 thứ:
-
-1. **Cách nhìn thị trường qua JTBD lens**
-2. **`Job executor` là ai**
-3. **Cách viết `job statement`: `verb + object + contextual clarifier`**
-4. **8 bước của `job map`**:
-   `define -> locate -> prepare -> confirm -> execute -> monitor -> modify -> conclude`
-
-### 2 chương nên mở nhiều nhất
-
-- **Chapter 2 — Define Your Market**
-- **Chapter 3 — Build Your Job Map**
-
-> Dùng playbook để **tra framework và ví dụ**.  
-> Dùng file này để **làm bài và chốt output**.
-
----
-
-## Đầu ra bắt buộc
-
-Người chấm cần thấy đủ 6 phần trong chính file này:
-
-1. **`Project slice` + market context**
-2. **`Job executor` + `core JTBD`**
-3. **3 `job stories`**
-4. **`JTBD lite map` + pain points**
-5. **`AI leverage point` + `product hypothesis`**
-6. **`Assumptions to validate` + verdict cuối sau thảo luận**
-
-Nếu thiếu một trong sáu phần trên, bài sẽ bị xem là chưa hoàn chỉnh.
-
----
-
-## Cách làm trong lớp (25 phút)
-
-```text
-3'  Chốt 1 lát cắt cụ thể của dự án
-7'  Viết market context + job executor + core JTBD
-6'  Viết 3 job stories + current alternatives
-6'  Điền JTBD lite map + AI leverage point + hypothesis
-3'  Share trong bàn và sửa version cuối
-```
-
-> Nếu dự án làm theo nhóm, cả nhóm có thể thảo luận chung.  
-> Nhưng file này vẫn nên có **version chốt rõ ràng** của người nộp.
-
----
+**Tên dự án / sản phẩm:** AI hỗ trợ chủ shop online phản hồi câu hỏi trước mua hàng
 
 ## Bước 0 — Khoanh đúng 1 lát cắt của dự án
 
-Phần lớn dự án nhóm viết quá rộng ở bước này, rồi sau đó mọi thứ mơ hồ theo.
-
-### Khoanh đúng 1 lát cắt theo 4 điểm
-
-- [ ] **1 nhóm người dùng chính**
-- [ ] **1 hoàn cảnh / tình huống rõ**
-- [ ] **1 job cốt lõi**
-- [ ] **1 workflow đủ cụ thể để vẽ ra được**
-
-### Điền nhanh trước khi làm
-
-- **Dự án của nhóm tôi là:** ___________________________________
-- **Lát cắt tôi chọn để phân tích hôm nay là:** ___________________________________
+- **Dự án của nhóm tôi là:** Công cụ hỗ trợ chủ shop online trả lời inbox/comment trước mua hàng nhanh và nhất quán hơn.
+- **Lát cắt tôi chọn để phân tích hôm nay là:** Chủ shop online trong giờ cao điểm, khi có nhiều inbox/comment hỏi về giá, size, tồn kho, phí ship, thời gian giao hàng và đổi trả.
 - **Vì sao tôi chọn lát cắt này:**  
-  > ___________________________________
+  > Đây là tình huống đủ cụ thể để map workflow: khách đang có ý định mua nhưng cần được trả lời nhanh. Nếu phản hồi chậm hoặc sai, shop có thể mất đơn ngay.
 
-### Viết quá rộng vs viết sắc hơn
-
-| Viết quá rộng | Viết sắc hơn |
-|---|---|
-| Giúp SME dùng AI để marketing | Giúp chủ shop online phản hồi câu hỏi trước mua hàng nhanh và nhất quán trong giờ cao điểm |
-| Dùng AI để làm slide | Tạo bản nháp deck nội bộ mạch lạc cho buổi họp gấp trong thời gian rất ngắn |
-| AI cho tuyển dụng | Giúp recruiter sàng lọc CV đầu vào nhanh hơn trước vòng gọi sơ bộ |
-
-> Nếu bạn không mô tả được **một hoàn cảnh cụ thể**, khả năng cao bạn đang viết quá rộng.
-
----
-
-## Bước 1 — Viết `Project Snapshot`
-
-### Tóm tắt dự án trong 3 dòng
+## Bước 1 — Project Snapshot
 
 1. **Nhóm tôi đang nghĩ mình đang giải quyết vấn đề gì?**  
-   > ___________________________________
+   > Chủ shop online bị quá tải khi phải trả lời nhiều câu hỏi lặp lại trước mua hàng trong giờ cao điểm, dẫn tới phản hồi chậm, thiếu nhất quán và bỏ lỡ cơ hội chốt đơn.
 
 2. **Người dùng chính hiện nhóm đang nhắm tới là ai?**  
-   > ___________________________________
+   > Chủ shop online nhỏ hoặc nhân viên trực inbox/comment cho shop trên Facebook, TikTok Shop, Shopee hoặc Instagram.
 
 3. **Hiện tại người dùng đó đang giải quyết vấn đề này bằng cách nào?**  
-   > ___________________________________
+   > Tự trả lời thủ công, dùng mẫu copy-paste, tra bảng sản phẩm/chính sách, nhờ nhân viên phụ trực chat, hoặc thử dùng chatbot rule-based/ChatGPT rời rạc.
 
----
-
-## Bước 2 — Viết `Market Context`
-
-Ở đây chưa cần solution. Chỉ cần bối cảnh thị trường đủ để hiểu:
-**ai đang gặp chuyện gì, trong hoàn cảnh nào, và vì sao bây giờ đáng giải.**
-
-### Trả lời 4 câu ngắn
+## Bước 2 — Market Context
 
 1. **Ai đang gặp vấn đề này?**  
-   > ___________________________________
+   > Chủ shop online nhỏ, người bán livestream, nhân viên CSKH/sales inbox phải trả lời khách trước mua hàng.
 
 2. **Vấn đề xuất hiện trong hoàn cảnh nào?**  
-   > ___________________________________
+   > Khi chạy ads, livestream, flash sale hoặc giờ cao điểm buổi tối, nhiều khách hỏi cùng lúc về thông tin sản phẩm và chính sách mua hàng.
 
 3. **Hiện tại họ đang dùng giải pháp thay thế nào?**  
-   > ___________________________________
+   > Trả lời tay, copy-paste mẫu, thuê người trực inbox, dùng chatbot rule-based, dùng ghi chú/bảng tính, hoặc hỏi ChatGPT rồi chỉnh lại.
 
 4. **Vì sao đây là thời điểm đáng giải?**  
-   > ___________________________________
+   > Người mua kỳ vọng phản hồi gần như ngay lập tức, còn shop nhỏ thường thiếu nhân sự trực chat liên tục. AI đã đủ tốt để hỗ trợ nhận diện câu hỏi lặp lại và soạn nháp câu trả lời theo ngữ cảnh, nhưng vẫn cần kiểm soát thông tin quan trọng.
 
 ### Tóm tắt market context trong 3-4 dòng
 
-> _______________________________________________  
-> _______________________________________________
+> Shop online nhỏ sống nhờ tốc độ phản hồi và độ tin của tư vấn trước mua hàng. Trong giờ cao điểm, chủ shop hoặc nhân viên trực chat phải vừa hiểu câu hỏi, vừa tra thông tin sản phẩm/chính sách, vừa trả lời đủ nhanh để không mất khách. Các giải pháp hiện tại rẻ nhưng dễ chậm, sai hoặc thiếu nhất quán. Cơ hội nằm ở việc hỗ trợ đúng bước tra cứu và soạn phản hồi, không thay toàn bộ người bán.
 
----
+## Bước 3 — Xác định Job Executor
 
-## Bước 3 — Xác định `Job Executor`
-
-`Job executor` là người **trực tiếp dùng một giải pháp để hoàn thành job**.
-
-### Đừng nhầm với:
-
-- người mua tiền nhưng không trực tiếp làm job
-- người ảnh hưởng quyết định
-- cả một công ty hay một phòng ban quá rộng
-
-### Gợi ý viết cho đúng
-
-- Sai hoặc quá rộng: `SME`, `doanh nghiệp`, `thị trường`
-- Tốt hơn: `chủ shop online`, `nhân viên CSKH`, `recruiter`, `sales ops manager`
-
-### Điền
-
-- **Job executor của dự án này là:** ___________________________________
+- **Job executor của dự án này là:** Chủ shop online hoặc nhân viên trực inbox/comment trực tiếp trả lời khách trước mua hàng.
 - **Vì sao tôi tin đây là người trực tiếp "thuê" giải pháp để làm job:**  
-  > ___________________________________
+  > Đây là người trực tiếp đọc câu hỏi, tìm thông tin sản phẩm/chính sách, soạn câu trả lời và chịu áp lực nếu khách bỏ đi. Buyer có thể là chủ shop, nhưng job executor trong workflow thực tế là người đang trực chat.
 
----
-
-## Bước 4 — Viết `Core JTBD`
-
-`Core JTBD` là công việc cốt lõi người dùng đang cố hoàn thành.
-
-### Công thức gợi ý
-
-```text
-[verb] + [object] + [contextual clarifier]
-```
-
-### Ví dụ
-
-- Chưa tốt: `trả lời inbox bằng AI`
-- Tốt hơn: `giải quyết câu hỏi trước mua hàng nhanh và chính xác trong giờ cao điểm`
-
-- Chưa tốt: `dùng AI để viết nội dung`
-- Tốt hơn: `tạo bản nháp nội dung chiến dịch phù hợp với brand trong thời gian rất ngắn`
-
-### 3 tiêu chí tự kiểm
-
-- [ ] Nếu bỏ tool hiện tại đi, job này vẫn còn tồn tại
-- [ ] Trong câu không có tên sản phẩm, AI, chatbot, app, màn hình
-- [ ] Câu đang mô tả **điều user muốn hoàn thành**, không phải thứ product đang làm
+## Bước 4 — Core JTBD
 
 ### Bản nháp 1
 
 **Core JTBD bản nháp:**  
-> _______________________________________________
+> Trả lời câu hỏi trước mua hàng bằng AI cho khách online trong giờ cao điểm.
 
 ### Gạch bỏ từ solution nếu có
 
-- Các từ solution tôi đang lỡ nhét vào câu: _________________________________
+- Các từ solution tôi đang lỡ nhét vào câu: AI
 
 ### Bản chốt
 
 **Core JTBD cuối cùng:**  
-> _______________________________________________
+> Giải quyết câu hỏi trước mua hàng nhanh, chính xác và nhất quán trong giờ cao điểm để không mất đơn.
 
----
-
-## Bước 5 — Viết 3 `Job Stories`
-
-Nếu `core JTBD` là job ở mức cốt lõi, thì `job story` giúp bạn thấy
-**job này xuất hiện trong hoàn cảnh nào**.
-
-### Format
-
-```text
-When [trigger], I want to [motivation], so I can [outcome].
-```
-
-### Ví dụ
-
-`When inbox đổ dồn vào buổi tối, tôi muốn có câu trả lời nhất quán ngay lập tức, so I can không mất đơn vì phản hồi chậm.`
-
-### Bảng 3 job stories
+## Bước 5 — 3 Job Stories
 
 | # | Trigger / When | Motivation / I want to | Outcome / so I can | Điều story này cho thấy |
 |---|---|---|---|---|
-| JS1 | | | | |
-| JS2 | | | | |
-| JS3 | | | | |
+| JS1 | Khi livestream hoặc chạy ads làm inbox/comment đổ dồn trong vài phút | Tôi muốn hiểu nhanh khách đang hỏi gì và trả lời đúng thông tin sản phẩm | Tôi có thể giữ khách đang nóng nhu cầu mua thay vì để họ chờ rồi rời đi | Pain lớn nằm ở tốc độ hiểu câu hỏi và phản hồi trong cao điểm |
+| JS2 | Khi nhiều khách hỏi lặp lại về size, giá, tồn kho, phí ship và đổi trả | Tôi muốn có câu trả lời nhất quán dựa trên thông tin shop đang dùng | Tôi có thể giảm sai sót và không phải gõ lại cùng một nội dung hàng chục lần | Pain nằm ở câu hỏi lặp lại nhưng vẫn cần đúng ngữ cảnh |
+| JS3 | Khi khách hỏi thêm một câu cuối trước khi quyết định mua | Tôi muốn phản hồi nhanh, rõ và đủ tin để khách yên tâm | Tôi có thể tăng khả năng chốt đơn trước khi khách chuyển sang shop khác | Pain nằm ở thời điểm cận chốt đơn, nơi phản hồi chậm làm mất doanh thu |
 
-### Tự kiểm nhanh
-
-- [ ] Mỗi story là một **tình huống thật**, không phải slogan chung chung
-- [ ] 3 story không trùng hệt nhau
-- [ ] Sau khi đọc 3 story, tôi hình dung được lúc nào product của mình đáng xuất hiện
-
----
-
-## Bước 6 — Liệt kê `Current Alternatives`
-
-Qua JTBD lens, đối thủ không chỉ là app cùng ngành.
-Đối thủ là **bất kỳ thứ gì user đang "thuê" để làm job**:
-
-- thao tác tay
-- file Excel / Google Sheets
-- intern / nhân viên
-- agency
-- ChatGPT / Claude / Gemini
-- công cụ chuyên dụng khác
-- hoặc thậm chí là **không làm gì cả**
-
-### Bảng alternatives
+## Bước 6 — Current Alternatives
 
 | Alternative hiện tại | User đang thuê nó để làm gì? | Nó làm tốt gì? | Nó fail ở đâu? | Switching cost hiện tại cao hay thấp? |
 |---|---|---|---|---|
-| Alt 1 | | | | |
-| Alt 2 | | | | |
-| Alt 3 | | | | |
+| Tự trả lời thủ công | Đọc từng inbox/comment, tra thông tin, gõ phản hồi | Linh hoạt, hiểu ngữ cảnh shop, kiểm soát chất lượng | Chậm khi nhiều khách, dễ mệt, dễ bỏ sót, khó nhất quán | Thấp, vì không cần học tool mới |
+| Copy-paste mẫu chat | Trả lời nhanh các câu hỏi lặp lại | Rẻ, dễ dùng, nhanh với câu hỏi đơn giản | Dễ sai ngữ cảnh, phải tự chọn mẫu, khó cập nhật theo tồn kho/chính sách | Thấp |
+| Thuê nhân viên/intern CSKH | Tăng người trực chat và chia tải | Có người thật xử lý linh hoạt | Tốn chi phí, cần training, vẫn sai nếu thông tin phân tán | Trung bình |
+| Chatbot rule-based hoặc ChatGPT thủ công | Tự động hóa một phần câu trả lời | Tốt với câu hỏi phổ biến hoặc soạn nháp nhanh | Rule cứng, thiếu dữ liệu shop; ChatGPT rời rạc dễ bịa nếu không có catalog/chính sách | Trung bình |
 
 ### Kết luận nhanh
 
 **Nếu project của tôi biến mất hôm nay, user nhiều khả năng sẽ quay về:**  
-> _______________________________________________
+> Tự trả lời thủ công kết hợp copy-paste mẫu chat và nhờ nhân viên phụ khi quá tải.
 
----
-
-## Bước 7 — Điền `JTBD Lite Map`
-
-Đây là bản rút gọn của `job map` trong playbook.
-
-### Mục tiêu
-
-Không phải để làm consultant workshop hoàn chỉnh.  
-Mục tiêu là nhìn ra:
-
-1. workflow hiện tại của user đi qua những bước nào
-2. bước nào đang đau nhất
-3. AI có nên chen vào đó không
-
-### 8 bước tham chiếu từ playbook
-
-1. `Define`
-2. `Locate`
-3. `Prepare`
-4. `Confirm`
-5. `Execute`
-6. `Monitor`
-7. `Modify`
-8. `Conclude`
-
-> Không nhất thiết bước nào cũng quan trọng như nhau trong dự án của bạn.  
-> Nếu ít liên quan, ghi `N/A`, đừng để trống.
-
-### Bảng JTBD Lite Map
+## Bước 7 — JTBD Lite Map
 
 | Step | Trong workflow này user đang cố làm gì? | Hôm nay họ đang dùng gì? | Friction / pain hiện tại | Mức đau |
 |---|---|---|---|---|
-| Define | | | | Low / Med / High |
-| Locate | | | | Low / Med / High |
-| Prepare | | | | Low / Med / High |
-| Confirm | | | | Low / Med / High |
-| Execute | | | | Low / Med / High |
-| Monitor | | | | Low / Med / High |
-| Modify | | | | Low / Med / High |
-| Conclude | | | | Low / Med / High |
+| Define | Hiểu khách đang hỏi về sản phẩm, chính sách hay ý định mua | Đọc inbox/comment bằng mắt, tự phân loại | Nhiều câu hỏi cùng lúc, câu hỏi viết tắt/sai chính tả, dễ hiểu nhầm | Med |
+| Locate | Tìm thông tin đúng về giá, size, tồn kho, ship, đổi trả | Ghi chú, bảng sản phẩm, trí nhớ, hỏi nhân viên khác | Thông tin nằm rải rác, cập nhật không kịp, dễ trả lời sai | High |
+| Prepare | Soạn câu trả lời phù hợp với câu hỏi và giọng shop | Gõ tay, copy-paste mẫu, chỉnh lại câu cũ | Tốn thời gian, câu trả lời thiếu cá nhân hóa, dễ lặp máy móc | High |
+| Confirm | Kiểm tra lại thông tin quan trọng trước khi gửi | Tự đối chiếu tồn kho/giá/chính sách | Bước này hay bị bỏ qua khi quá tải, gây sai thông tin | High |
+| Execute | Gửi phản hồi cho khách ở đúng kênh | Messenger, comment, TikTok/Shopee chat | Chậm nếu phải chuyển qua nhiều tab/kênh | Med |
+| Monitor | Theo dõi khách có phản hồi, hỏi tiếp hay bỏ đi | Nhìn notification, tự nhớ khách nào cần follow-up | Dễ sót khách, không biết ai đang gần chốt | Med |
+| Modify | Điều chỉnh câu trả lời khi khách đổi nhu cầu hoặc hỏi thêm | Gõ lại thủ công, sửa mẫu | Cần giữ ngữ cảnh hội thoại, dễ trả lời lệch | Med |
+| Conclude | Chốt đơn, gửi link mua, lưu lead hoặc kết thúc hội thoại | Gửi link, nhập đơn, đánh dấu thủ công | Dữ liệu sau chat không được lưu có cấu trúc, khó học lại pattern | Low |
 
 ### Chốt 2 bước đau nhất
 
-**Bước đau nhất #1:** _________________________________  
-**Bước đau nhất #2:** _________________________________
+**Bước đau nhất #1:** Locate  
+**Bước đau nhất #2:** Prepare + Confirm
 
 **Vì sao đây là nơi đáng chú ý nhất:**  
-> _______________________________________________  
-> _______________________________________________
+> Nếu không tìm đúng thông tin, shop trả lời nhanh cũng vô ích vì có thể sai giá, sai tồn kho hoặc sai chính sách. Nếu soạn câu trả lời chậm hoặc thiếu nhất quán, khách có thể chuyển sang shop khác trước khi được tư vấn đủ rõ.
 
----
-
-## Bước 8 — Chỉ ra `AI Leverage Point`
-
-Sau khi map workflow, mới hỏi:
-**AI nên vào đâu, với vai trò gì, và vì sao là ở đó?**
-
-### Nhắc nhanh
-
-- Đừng nhét AI vào chỉ vì "có AI thì nghe hay"
-- Nếu pain lớn nhất không nằm ở chỗ AI giải tốt, hãy thành thật ghi ra
-- Nếu current alternative đã đủ tốt, project cần xem lại
-
-### Bảng leverage point
+## Bước 8 — AI Leverage Point
 
 | Step | AI nên giúp bằng cách nào? | Vì sao AI hợp ở đây? | Rủi ro chính nếu dùng AI |
 |---|---|---|---|
-| 1 | | | |
-| 2 | | | |
+| Locate | Nhận diện ý định câu hỏi và truy xuất thông tin liên quan từ catalog, FAQ, chính sách, tồn kho đã được shop cung cấp | Câu hỏi lặp lại nhiều, có thể map sang dữ liệu bán hàng có cấu trúc | Nếu dữ liệu shop cũ hoặc thiếu, AI có thể gợi ý sai |
+| Prepare + Confirm | Soạn nháp câu trả lời theo giọng shop và highlight thông tin cần người bán kiểm tra trước khi gửi | AI mạnh ở tổng hợp ngữ cảnh và tạo phản hồi nhanh, còn người bán giữ quyền kiểm soát điểm rủi ro | AI có thể bịa, trả lời quá tự tin, hoặc dùng wording không phù hợp thương hiệu |
 
 ### Kết luận nhanh
 
 **AI leverage point quan trọng nhất của dự án tôi là:**  
-> _______________________________________________
+> Hỗ trợ Locate + Prepare + Confirm: AI gợi ý câu trả lời dựa trên dữ liệu sản phẩm/chính sách của shop, đồng thời nhắc người bán kiểm tra các trường nhạy cảm như tồn kho, giá, đổi trả trước khi gửi.
 
 **Vì sao không phải ở bước khác:**  
-> _______________________________________________
+> Execute và Monitor cũng có thể tối ưu, nhưng nếu câu trả lời chưa đúng và chưa đủ tin, tự động gửi nhanh chỉ làm tăng rủi ro. Giá trị lớn nhất nằm trước khi gửi: tìm đúng thông tin, soạn đúng câu, và kiểm tra điểm có thể gây mất đơn hoặc khiếu nại.
 
----
-
-## Bước 9 — Viết `Product Hypothesis`
-
-Bây giờ mới đến lúc viết hypothesis.
-
-### Công thức gợi ý
-
-```text
-Nếu chúng ta giúp [job executor] làm [job / sub-job] tốt hơn ở bước [x],
-bằng cách [AI leverage],
-thì họ sẽ chuyển từ [current alternative] sang [hướng giải pháp của nhóm],
-vì [giá trị rõ nhất].
-```
+## Bước 9 — Product Hypothesis
 
 ### Bản hypothesis của tôi
 
-> _______________________________________________  
-> _______________________________________________
+> Nếu chúng ta giúp chủ shop online hoặc nhân viên trực inbox giải quyết câu hỏi lặp lại trước mua hàng tốt hơn ở bước Locate + Prepare + Confirm, bằng cách gợi ý câu trả lời theo catalog và chính sách shop, thì họ sẽ chuyển từ trả lời thủ công/copy-paste sang giải pháp của nhóm, vì họ giảm thời gian phản hồi trong giờ cao điểm mà vẫn giữ kiểm soát chất lượng câu trả lời.
 
 ### Tín hiệu sớm nếu hypothesis này đúng
 
-1. _______________________________________________
-2. _______________________________________________
+1. Chủ shop chấp nhận dùng gợi ý trả lời trong các ca cao điểm và gửi ít nhất 30-50% câu trả lời từ nháp được đề xuất sau khi chỉnh nhẹ.
+2. Thời gian phản hồi trung bình cho câu hỏi lặp lại giảm rõ rệt, trong khi số lỗi về giá/tồn kho/chính sách không tăng.
 
----
-
-## Bước 10 — Liệt kê `Assumptions to Validate`
-
-Job story chưa có research vẫn chỉ là **giả thuyết tốt hơn**, chưa phải sự thật.
-
-### 5 assumption thường đáng kiểm
-
-- Tôi đã chọn đúng `job executor`
-- Pain này thật sự đủ đau và xảy ra đủ thường xuyên
-- User sẽ đổi khỏi alternative hiện tại nếu có giải pháp tốt hơn
-- AI thực sự tạo giá trị ở step tôi chọn
-- User đủ tin kết quả AI để đưa vào workflow thật
-
-### Bảng assumptions
+## Bước 10 — Assumptions to Validate
 
 | Assumption | Vì sao assumption này rủi ro? | Tôi đang có bằng chứng gì? | Cần validate bằng cách nào tiếp theo? |
 |---|---|---|---|
-| A1 | | | |
-| A2 | | | |
-| A3 | | | |
-| A4 | | | |
-| A5 | | | |
+| A1: Pain trả lời inbox/comment trong giờ cao điểm xảy ra đủ thường xuyên | Nếu shop chỉ thỉnh thoảng quá tải, họ không có động lực đổi workflow | Quan sát phổ biến từ hành vi bán hàng online, nhưng chưa có phỏng vấn người dùng thật | Phỏng vấn 5-7 chủ shop/nhân viên trực chat về số lượng câu hỏi mỗi ca cao điểm |
+| A2: Chủ shop có dữ liệu sản phẩm/chính sách đủ sạch để AI dùng | Nếu dữ liệu phân tán hoặc sai, gợi ý sẽ không đáng tin | Giả định từ việc shop thường có bảng giá, ảnh sản phẩm, chính sách ship/đổi trả | Xin sample catalog/FAQ từ 2-3 shop và thử map thành dữ liệu đầu vào |
+| A3: Người bán tin gợi ý AI đủ để dùng trong chat thật | Nếu họ luôn phải kiểm tra lại từ đầu, sản phẩm không tiết kiệm thời gian | Bằng chứng hiện tại còn yếu, mới dựa trên logic workflow | Prototype nháp trả lời, cho người bán đánh giá độ đúng và mức chỉnh sửa cần thiết |
+| A4: Người bán sẵn sàng chuyển khỏi copy-paste/thủ công | Workflow cũ rẻ và quen thuộc, dù chậm | Có logic pain nhưng chưa đo switching cost thật | Test landing/prototype trong 1 tuần với shop nhỏ, đo tần suất dùng lại |
+| A5: Tốc độ phản hồi ảnh hưởng conversion đủ mạnh | Nếu khách không mua vì lý do khác như giá/sản phẩm, tốc độ trả lời không đủ tạo value | Bằng chứng hiện tại còn yếu, chưa đo bằng dữ liệu bán hàng của shop thật | So sánh đơn/chốt lead giữa nhóm câu hỏi được trả lời nhanh và nhóm bị trễ |
 
 ### Assumption nguy hiểm nhất nếu tôi đang sai
 
-> _______________________________________________
+> A2 là nguy hiểm nhất: nếu dữ liệu sản phẩm/chính sách của shop không đủ sạch hoặc không được cập nhật, AI leverage point ở Locate + Prepare + Confirm sẽ tạo rủi ro trả lời sai thay vì tạo giá trị.
 
----
+## Bước 11 — Share trong bàn
 
-## Bước 11 — Share trong bàn (3')
-
-### Mỗi người / mỗi nhóm chỉ nói 4 thứ
-
-1. **Job executor của bạn là ai**
-2. **Core JTBD của bạn là gì**
-3. **Step đau nhất đang nằm ở đâu**
-4. **AI leverage point + assumption rủi ro nhất là gì**
-
-### Nếu chưa biết hỏi ngược gì, dùng 4 câu này
-
-1. **"Câu JTBD này có đang lỡ nhét solution vào không?"**
-2. **"Alternative hiện tại của user là gì, và tại sao họ chưa bỏ nó?"**
-3. **"Pain mạnh nhất nằm ở bước nào trong workflow, có chắc AI giải tốt được không?"**
-4. **"Assumption nào nếu sai thì cả hypothesis sẽ sập?"**
-
-### Ghi nhanh sau khi nghe bàn phản biện
+### Ghi nhanh sau khi nghe bạn cùng bàn phản biện
 
 | Ý phản biện tôi nghe được | Nó chạm vào phần nào? | Tôi sẽ giữ / sửa gì? |
 |---|---|---|
-| | | |
-| | | |
-| | | |
-
----
+| Bùi Ngọc Khánh góp ý: nếu shop có nhân viên trực chat riêng, cần phân biệt rõ buyer là chủ shop và job executor là người đang trực tiếp trả lời inbox/comment. Khánh cũng nhắc AI có thể trả lời sai tồn kho, giá khuyến mãi hoặc chính sách đổi trả nếu dữ liệu không cập nhật, nên không nên tự động gửi ngay. | Job executor, AI leverage point, Assumption A2/A3 | Giữ job executor là "chủ shop hoặc nhân viên trực inbox/comment", nhưng ghi rõ người trực tiếp làm job là người đang trả lời khách. Giữ AI leverage point ở Locate + Prepare + Confirm, trong đó Confirm phải có người bán kiểm soát trước khi gửi. |
 
 ## Bước 12 — Chốt version cuối sau thảo luận
 
 ### Sau khi nghe phản biện, tôi thay đổi gì?
 
-- [ ] Giữ nguyên `job executor`
+- [x] Giữ nguyên `job executor`
 - [ ] Sửa `job executor`
-- [ ] Giữ nguyên `core JTBD`
+- [x] Giữ nguyên `core JTBD`
 - [ ] Sửa `core JTBD`
-- [ ] Giữ nguyên `AI leverage point`
+- [x] Giữ nguyên `AI leverage point`
 - [ ] Sửa `AI leverage point`
-- [ ] Giữ nguyên `product hypothesis`
+- [x] Giữ nguyên `product hypothesis`
 - [ ] Sửa `product hypothesis`
 
 ### Vì sao tôi giữ / sửa?
 
-> _______________________________________________  
-> _______________________________________________
+> Tôi giữ hướng phân tích vì job đủ cụ thể, workflow có điểm đau rõ và AI leverage point nằm ở bước trước khi gửi câu trả lời. Tuy nhiên tôi ghi rõ hơn rằng AI chỉ nên gợi ý và hỗ trợ kiểm tra, không tự động thay người bán ở các thông tin rủi ro như giá, tồn kho, đổi trả.
 
 ### Version cuối cùng tôi nộp
 
 **Job executor:**  
-> _______________________________________________
+> Chủ shop online hoặc nhân viên trực inbox/comment trực tiếp trả lời khách trước mua hàng.
 
 **Core JTBD:**  
-> _______________________________________________
+> Giải quyết câu hỏi trước mua hàng nhanh, chính xác và nhất quán trong giờ cao điểm để không mất đơn.
 
 **2 bước đau nhất trong workflow:**  
-> _______________________________________________
+> Locate; Prepare + Confirm.
 
 **AI leverage point chính:**  
-> _______________________________________________
+> Gợi ý câu trả lời dựa trên catalog/chính sách shop ở bước Locate + Prepare + Confirm, kèm kiểm soát của người bán trước khi gửi.
 
 **Product hypothesis:**  
-> _______________________________________________
+> Nếu giúp người trực inbox trả lời câu hỏi lặp lại trước mua hàng nhanh và nhất quán hơn bằng gợi ý dựa trên dữ liệu shop, họ sẽ chuyển khỏi trả lời thủ công/copy-paste vì giảm thời gian phản hồi trong giờ cao điểm mà vẫn kiểm soát được độ đúng.
 
 **Assumption cần validate đầu tiên:**  
-> _______________________________________________
-
----
+> Chủ shop có dữ liệu sản phẩm/chính sách đủ sạch và đủ cập nhật để AI dùng mà không tạo rủi ro trả lời sai.
 
 ## Checklist trước khi nộp
 
-- [ ] Tôi đã khoanh đúng 1 lát cắt cụ thể của dự án.
-- [ ] Tôi đã phân biệt được `job executor` với buyer / influencer.
-- [ ] `Core JTBD` của tôi không nhét solution vào câu.
-- [ ] Tôi đã viết đủ 3 `job stories`.
-- [ ] Tôi đã điền `JTBD lite map` và khoanh ra 2 bước đau nhất.
-- [ ] Tôi đã chỉ ra `AI leverage point` thay vì nhảy thẳng vào feature list.
-- [ ] Tôi đã ghi rõ `assumptions to validate`.
-- [ ] Tôi đã sửa version cuối sau khi share trong bàn.
-
----
-
-## Nếu còn thời gian / làm về nhà
-
-- Phỏng vấn nhanh 1 người dùng thật để kiểm xem `job story` nào là sát nhất.
-- So sánh `current alternatives` với project của nhóm theo 3 tiêu chí: nhanh hơn, rẻ hơn, tin hơn.
-- Tự hỏi lại một câu khó: **nếu không dùng AI, project này còn tạo giá trị không?**
-- Nếu câu trả lời là "không", hãy xem lại liệu nhóm đang giải **job thật** hay chỉ đang tìm chỗ để nhét AI.
+- [x] Tôi đã khoanh đúng 1 lát cắt cụ thể của dự án.
+- [x] Tôi đã phân biệt được `job executor` với buyer / influencer.
+- [x] `Core JTBD` của tôi không nhét solution vào câu.
+- [x] Tôi đã viết đủ 3 `job stories`.
+- [x] Tôi đã điền `JTBD lite map` và khoanh ra 2 bước đau nhất.
+- [x] Tôi đã chỉ ra `AI leverage point` thay vì nhảy thẳng vào feature list.
+- [x] Tôi đã ghi rõ `assumptions to validate`.
+- [x] Tôi đã sửa version cuối sau khi share trong bàn.

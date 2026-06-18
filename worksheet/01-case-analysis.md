@@ -8,311 +8,137 @@ nop-cuoi: Có — đây là file nộp cuối của Lab 1
 
 # Lab 1 — Case Analysis / Phân tích "tử huyệt" chiến lược
 
-**Case đã chọn:** _______________  
-**Người làm:** _______________  
-**Bàn / nhóm bàn:** _______________  
-**Ngày:** ____________
+**Case đã chọn:** Stack Overflow bị ChatGPT đổi entry point hỏi đáp lập trình  
+**Người làm:** Trần Đức Đăng Khôi  
+**Bàn / nhóm bàn:** Dãy cuối
+**Ngày:** 2026-06-18
 
-> Đây là **file duy nhất** của Lab 1.  
-> File này đồng thời đóng vai trò:
->
-> - guide từng bước,
-> - worksheet để điền trực tiếp,
-> - và file nộp cuối cho người chấm.
+## Bước 0 — Chọn case
 
-Mục tiêu của bài này không phải kể lại "AI đã giết một công ty". Mục tiêu là chỉ ra, bằng bằng chứng thật:
+- **Case / sản phẩm / công ty:** Stack Overflow
+- **AI / platform / sản phẩm mới tạo áp lực:** ChatGPT, GitHub Copilot, Cursor, Claude Code và các AI coding assistant.
+- **Vì sao tôi chọn case này?**
+  > Stack Overflow từng là nơi mặc định để lập trình viên tìm câu trả lời kỹ thuật. Sau ChatGPT, một phần lớn câu hỏi đơn giản không còn cần được public lên forum nữa: developer có thể hỏi AI ngay trong chat/editor. Case này đáng phân tích vì nó cho thấy AI không chỉ thay thế câu trả lời, mà còn thay đổi entry point và động lực đóng góp của cộng đồng.
 
-1. **vì sao case đó bị tổn thương trước AI**
-2. **điều gì đã thay đổi vĩnh viễn**
-3. **và nếu rút một cảnh báo cho dự án của nhóm mình thì đó là gì**
+## Bước 1 — 3-5 bằng chứng chốt
 
-Quy tắc xuyên suốt: **không có bằng chứng = không có nhận định.**
-
----
-
-## Đầu ra bắt buộc
-
-Người chấm cần thấy đủ 4 phần trong chính file này:
-
-1. **3-5 bằng chứng chốt**
-2. **4 nhận định bắt buộc**
-3. **ghi chú sau khi share trong bàn**
-4. **verdict cuối của cá nhân**
-
-Nếu thiếu một trong bốn phần trên, bài sẽ bị xem là chưa hoàn chỉnh.
-
----
-
-## Cách làm trong lớp (20 phút)
-
-```text
-2'  Chọn case
-8'  Làm cá nhân: gom bằng chứng + viết 4 nhận định
-7'  Share trong bàn: 90 giây / người + hỏi vặn lại
-3'  Tự sửa verdict cá nhân sau thảo luận
-```
-
----
-
-## Bước 0 — Chọn case thật nhanh
-
-Mặc định: **bạn tự chọn case của mình**.
-
-### Một case phù hợp cần có 4 điều
-
-- [ ] Có một **AI shock** hoặc mốc đổi cục diện đủ rõ
-- [ ] Có thể tìm được ít nhất **3-5 bằng chứng công khai**
-- [ ] Có tác động đủ nhìn thấy được ở user / doanh thu / pricing / traffic / cổ phiếu / usage / vị thế cạnh tranh
-- [ ] Có thể trả lời câu hỏi: **"Điều gì đã thay đổi vĩnh viễn?"**
-
-### Điền nhanh trước khi làm
-
-- **Case / sản phẩm / công ty:** ___________________________________
-- **AI / platform / sản phẩm mới tạo áp lực:** ___________________________________
-- **Vì sao tôi chọn case này?**  
-  > ___________________________________
-
-### Nếu bí case, chọn 1 trong 6 case gợi ý này
-
-| Case | Vì sao đáng phân tích | Một tín hiệu đáng chú ý |
-|---|---|---|
-| Chegg | entry point học tập đổi rất nhanh | 7,8M → 3,2M thuê bao |
-| Stack Overflow | hiệu ứng mạng bị đảo chiều | câu hỏi mới giảm mạnh sau ChatGPT |
-| Jasper | lớp vỏ dễ bị generic AI ép | định giá và tăng trưởng chậm lại sau ChatGPT |
-| Tome | AI phổ thông "đủ tốt" làm phân khúc cũ yếu đi | nhiều đợt cắt giảm và pivot |
-| Inflection / Pi | chatbot tiêu dùng bị ông lớn lấn át | đội ngũ chuyển sang Microsoft |
-| Figma / Claude Design | rủi ro "đất thuê" khi platform bước xuống app layer | cổ phiếu Figma phản ứng tiêu cực khi Claude Design ra mắt |
-
-> Nếu có case riêng rõ hơn, dùng case riêng.
-
----
-
-## Bước 1 — Gom 3-5 bằng chứng chốt
-
-Không cần chép lại mọi số. Chỉ giữ những bằng chứng đủ mạnh để đỡ toàn bộ lập luận của bạn.
-
-### Tìm bằng chứng theo 4 cụm
-
-1. **Case trước AI**
-   Sản phẩm là gì, user là ai, họ trả tiền cho cái gì, case từng thắng nhờ gì.
-
-2. **AI shock**
-   Mốc Big Tech AI / platform AI / sản phẩm mới xuất hiện và đổi luật chơi.
-
-3. **Tác động quan sát được**
-   User, doanh thu, ARR, pricing, traffic, usage, cổ phiếu, sa thải, pivot.
-
-4. **Cục diện mới của thị trường**
-   Ai phản ứng tốt hơn, ai thay thế tốt hơn, entry point mới nằm ở đâu, phân khúc còn sống không.
-
-### Ưu tiên nguồn thế nào?
-
-| Mức ưu tiên | Loại nguồn | Ví dụ |
-|---|---|---|
-| 1 | Nguồn gốc | báo cáo tài chính, investor relations, pricing page, blog chính thức |
-| 2 | Báo uy tín | Reuters, CNBC, Bloomberg, FT, TechCrunch |
-| 3 | Dữ liệu công khai / tổng hợp | MacroTrends, Similarweb, Stack Overflow Survey, Sacra |
-
-### Bảng bằng chứng chốt
-
-| # | Bằng chứng / số liệu chốt | Vì sao số này quan trọng? | Nguồn |
-|---|---|---|---|
-| E1 | | | |
-| E2 | | | |
-| E3 | | | |
-| E4 | | | |
-| E5 | | | |
+| #   | Bằng chứng / số liệu chốt                                                                                                                                                                                                                                                                  | Vì sao số này quan trọng?                                                                                                                 | Nguồn                                                                                                                                                            |
+| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| E1  | Tháng 12/2022, Stack Overflow ban tạm thời nội dung do ChatGPT tạo vì số lượng bài AI tăng nhanh và tỷ lệ câu trả lời đúng được đánh giá là quá thấp.                                                                                                                                      | Đây là mốc AI shock: ChatGPT không chỉ cạnh tranh bên ngoài, mà còn làm ô nhiễm chính cơ chế tạo tri thức của Stack Overflow.             | Meta Stack Overflow: https://meta.stackoverflow.com/questions/421831/policy-generative-ai-e-g-chatgpt-is-banned                                                  |
+| E2  | Phân tích công khai trên Meta Stack Exchange ghi nhận activity đã giảm từ trước, nhưng riêng giai đoạn tháng 11/2022 sang 12/2022, non-deleted questions giảm 11.0%; deleted answers tăng bất thường.                                                                                      | Cho thấy sau khi ChatGPT xuất hiện, hành vi hỏi đáp trên Stack Overflow có dấu hiệu đổi nhịp ngay ở tầng contribution.                    | Meta Stack Exchange / SEDE discussion: https://meta.stackexchange.com/questions/387278/has-stack-exchanges-traffic-decreased-since-chatgpt                       |
+| E3  | Stack Overflow Developer Survey 2023: 44% developer đã dùng AI tools trong development process, 26% dự định dùng; trong nhóm dùng AI, ChatGPT chiếm 83%, GitHub Copilot 56%.                                                                                                               | Cho thấy developer bắt đầu đưa AI vào workflow thật, không chỉ thử nghiệm bên ngoài.                                                      | Stack Overflow Blog, 2023 Developer Survey AI section: https://stackoverflow.blog/2023/06/14/hype-or-not-developers-have-something-to-say-about-ai/              |
+| E4  | Stack Overflow Developer Survey 2024: 76% respondent đang dùng hoặc dự định dùng AI tools; 62% đã đang dùng, tăng từ 44% năm trước.                                                                                                                                                        | AI trở thành hành vi đại chúng trong developer workflow, làm suy yếu giả định "developer sẽ luôn lên forum trước khi hỏi".                | 2024 Stack Overflow Developer Survey: https://survey.stackoverflow.co/2024/ai                                                                                    |
+| E5  | Năm 2024, OpenAI và Stack Overflow công bố API partnership: OpenAI dùng OverflowAPI và có thể surface validated technical knowledge từ Stack Overflow trong ChatGPT; đến 2025, survey ghi nhận 84% respondent dùng hoặc dự định dùng AI tools, 51% professional developers dùng hằng ngày. | Cục diện mới không phải Stack Overflow biến mất, mà chuyển từ destination Q&A thành data/trust layer nằm trong hoặc bên cạnh AI workflow. | OpenAI partnership: https://openai.com/index/api-partnership-with-stack-overflow/; 2025 Stack Overflow Developer Survey: https://survey.stackoverflow.co/2025/ai |
 
 ### 3 phát hiện ban đầu
 
-Trước khi viết nhận định, ghi nhanh 3 dòng:
+1. **Case này từng thắng nhờ...**
+   > Stack Overflow thắng nhờ mạng lưới cộng đồng: developer hỏi, chuyên gia trả lời, cộng đồng vote/curate, rồi Google/search đưa người sau đến cùng câu trả lời.
+2. **AI shock làm thay đổi...**
+   > ChatGPT biến hành vi "tìm câu trả lời đã có" thành "hỏi trực tiếp một trợ lý lập trình", đặc biệt với câu hỏi đơn giản và lỗi phổ biến.
+3. **Dấu hiệu mạnh nhất cho thấy luật chơi mới là...**
+   > Stack Overflow vừa phải cấm AI-generated answers để giữ chất lượng, vừa phải hợp tác/licensing với AI platform để tri thức của mình xuất hiện trong workflow mới.
 
-1. **Case này từng thắng nhờ...**  
-   > ___________________________________
-2. **AI shock làm thay đổi...**  
-   > ___________________________________
-3. **Dấu hiệu mạnh nhất cho thấy luật chơi mới là...**  
-   > ___________________________________
-
----
-
-## Bước 2 — Viết 4 nhận định bắt buộc
+## Bước 2 — 4 nhận định bắt buộc
 
 ### Nhận định 1 — Trước AI, case này thắng nhờ giả định gì?
 
-Gợi ý:
+**Trả lời của tôi:**
 
-- Người dùng thuê sản phẩm này để làm gì?
-- Giá trị lõi trước AI là gì?
-- Họ thắng nhờ workflow, switching cost, brand, distribution, data hay một giả định hành vi nào?
-- Job-to-be-done (công việc người dùng "thuê" sản phẩm làm hộ) là gì?
+> Trước AI, Stack Overflow thắng nhờ giả định rằng khi developer kẹt một lỗi hoặc API, họ sẽ search web, tìm một câu hỏi tương tự, đọc câu trả lời đã được cộng đồng vote, rồi nếu chưa có thì tự đăng câu hỏi mới. Giá trị lõi là tri thức kỹ thuật có cấu trúc, được kiểm chứng xã hội bằng upvote, accepted answer, comment và moderation.  
+> Job-to-be-done của developer là "giải quyết vấn đề lập trình đủ nhanh và đủ tin để tiếp tục công việc". Stack Overflow được thuê cho job đó vì nó có kho câu hỏi khổng lồ và cơ chế trust tốt hơn các blog rời rạc.
 
-**Trả lời của tôi:**  
-> _______________________________________________  
-> _______________________________________________
-
-**Bằng chứng đỡ nhận định này:** E___, E___
-
----
+**Bằng chứng đỡ nhận định này:** E1, E2
 
 ### Nhận định 2 — Kỳ vọng người dùng và luật chơi cạnh tranh đã đổi ở đâu?
 
-#### Nhắc nhanh 7 Dịch chuyển Kỳ vọng
+**Shift kỳ vọng quan trọng nhất:** Phản hồi ngay + thấu hiểu ngữ cảnh + làm xong giúp tôi  
+**Competitive dynamic quan trọng nhất:** Switching costs giảm; platform/editor chiếm entry point; data advantages chuyển sang AI workflow
 
-1. Làm xong giúp tôi
-2. May đo cho tôi
-3. Tự lo việc lặt vặt
-4. Trả theo kết quả
-5. Phản hồi ngay
-6. Giao diện tự thay đổi
-7. Thấu hiểu ngữ cảnh
+**Trả lời của tôi:**
 
-#### Nhắc nhanh 5 Competitive Dynamics
+> Kỳ vọng của developer đổi từ "tìm đúng thread" sang "mô tả vấn đề và nhận hướng xử lý ngay". Với ChatGPT/Copilot/Cursor, developer không cần rời IDE hoặc tab chat để hỏi câu đơn giản, debug đoạn code nhỏ, sinh ví dụ API, hoặc nhờ giải thích lỗi. Điều này làm giảm vai trò của search-to-forum trong các vấn đề phổ thông.  
+> Luật chơi cạnh tranh cũng đổi: đối thủ của Stack Overflow không chỉ là forum khác, mà là AI assistant xuất hiện ngay trong workflow coding. Khi 2023 đã có 44% developer dùng AI tools và 2024 tăng lên 62% đang dùng, entry point mới không còn nằm mặc định ở Google → Stack Overflow nữa.
 
-- switching costs giảm
-- data advantages tăng
-- platform risk
-- build-copy cycles tăng tốc
-- GTM + distribution quan trọng hơn
-
-**Shift kỳ vọng quan trọng nhất:** ___________________________________  
-**Competitive dynamic quan trọng nhất:** ___________________________________
-
-**Trả lời của tôi:**  
-> _______________________________________________  
-> _______________________________________________
-
-**Bằng chứng đỡ nhận định này:** E___, E___
-
----
+**Bằng chứng đỡ nhận định này:** E3, E4, E5
 
 ### Nhận định 3 — Giả định nào không còn đúng nữa? Điều gì đã thay đổi vĩnh viễn?
 
-Gợi ý:
+**Điều đã thay đổi vĩnh viễn theo tôi là:**
 
-- Switching cost cũ có từng giữ user ở lại không? Vì sao giờ không còn đủ?
-- Entry point cũ của sản phẩm có còn tồn tại không, hay người dùng đã chuyển sang một điểm bắt đầu mới?
-- Workflow cũ có còn được chấp nhận không, hay chuẩn mới là "làm xong giúp tôi / ngay trong nơi tôi đang làm việc"?
-- "Thay đổi vĩnh viễn" không phải là giá cổ phiếu giảm; nó là **chuẩn mới trong đầu người dùng** hoặc **luật chơi mới của thị trường**.
-- Phân khúc này còn tồn tại không? Nếu còn, nó đang được phục vụ theo cách khác ra sao?
+> Giả định "developer sẽ public câu hỏi phổ thông lên cộng đồng để nhận câu trả lời" không còn chắc đúng. Với câu hỏi đơn giản, developer ngày càng hỏi AI trước vì nhanh hơn, riêng tư hơn, ít sợ bị downvote/đóng câu hỏi, và có thể đưa kèm code/context cá nhân.  
+> Điều thay đổi vĩnh viễn là entry point của developer help chuyển từ public Q&A/search sang AI assistant có ngữ cảnh. Stack Overflow vẫn có giá trị, nhưng giá trị đó chuyển dần từ "nơi mọi người đến hỏi trước" sang "nguồn tri thức đáng tin để AI, enterprise và developer tham chiếu khi vấn đề phức tạp hoặc cần kiểm chứng".
 
-**Điều đã thay đổi vĩnh viễn theo tôi là:**  
-> _______________________________________________  
-> _______________________________________________
-
-**Bằng chứng đỡ nhận định này:** E___, E___
-
----
+**Bằng chứng đỡ nhận định này:** E2, E4, E5
 
 ### Nhận định 4 — Case này còn cứu được không? Nếu có, phải đổi bằng cách nào?
 
-Gợi ý:
+**Verdict ban đầu của tôi:** Có nhưng phải đổi rất mạnh
 
-- Nếu cứu được: họ phải đổi ở moat nào, workflow nào, distribution nào?
-- Nếu không cứu được: vì sao đã quá muộn?
-- So với một đối thủ phản ứng tốt hơn, họ chậm ở đâu?
+**Trả lời của tôi:**
 
-**Verdict ban đầu của tôi:** Có / Không / Có nhưng phải đổi rất mạnh
+> Stack Overflow còn cứu được vì AI vẫn có vấn đề trust: câu trả lời có thể gần đúng nhưng sai ở chi tiết, trong khi programming cần độ chính xác cao. Điểm sống còn của Stack Overflow là trở thành lớp trust/curation cho tri thức kỹ thuật: câu trả lời có nguồn, cộng đồng kiểm chứng, dữ liệu được cấp phép, và workflow enterprise nơi kiến thức nội bộ cần được tổ chức.  
+> Nhưng Stack Overflow khó quay lại vị thế cũ nếu chỉ chờ developer tự đăng câu hỏi như trước. Họ phải chấp nhận rằng câu hỏi đơn giản sẽ bị AI hút đi, và tập trung vào câu hỏi khó, kiến thức mới, cộng đồng chuyên gia, data licensing, và sản phẩm AI được grounded trên nội dung đã kiểm chứng.
 
-**Trả lời của tôi:**  
-> _______________________________________________  
-> _______________________________________________
-
-**Bằng chứng đỡ nhận định này:** E___, E___
-
----
+**Bằng chứng đỡ nhận định này:** E1, E5
 
 ## Tóm tắt cá nhân trước khi share trong bàn
 
-Viết đúng 3 câu:
+1. `Case này yếu đi vì...` developer không còn phải bắt đầu từ search/forum cho nhiều câu hỏi lập trình phổ thông; họ có thể hỏi AI ngay trong chat hoặc IDE.
+2. `Điều thay đổi vĩnh viễn là...` entry point của developer help chuyển từ public Q&A sang AI assistant có ngữ cảnh, còn Stack Overflow phải trở thành trust/data layer.
+3. `Verdict của tôi là...` Stack Overflow còn cứu được nếu tập trung vào tri thức được kiểm chứng, câu hỏi phức tạp, enterprise knowledge và licensing, nhưng mô hình "forum là điểm bắt đầu mặc định" đã yếu đi.
 
-1. `Case này yếu đi vì...`
-2. `Điều thay đổi vĩnh viễn là...`
-3. `Verdict của tôi là...`
+## Bước 3 — Share trong bàn
 
-**Bản tóm tắt 3 câu của tôi:**  
-1. _______________________________________________  
-2. _______________________________________________  
-3. _______________________________________________
+### Ghi nhanh khi nghe bạn cùng bàn
 
----
+| Người | Case                                  | Bằng chứng mạnh nhất họ nêu | Điều họ cho là "thay đổi vĩnh viễn" | Verdict của họ        |
+| ----- | ------------------------------------- | --------------------------- | ----------------------------------- | --------------------- |
+| Bùi Ngọc Khánh | Jasper / AI writing assistant | Sau ChatGPT, Jasper phải chuyển positioning từ công cụ viết AI đơn lẻ sang marketing platform cho team/doanh nghiệp, vì phần "viết hộ" đã bị generic AI làm rẻ và phổ thông hơn | Giá trị bền vững không còn nằm ở việc sinh text bằng prompt, mà nằm ở workflow marketing, brand context, dữ liệu chiến dịch và khả năng phối hợp trong team | Cứu được nếu đi sâu vào vertical workflow marketing; khó nếu chỉ là wrapper viết nội dung |
 
-## Bước 3 — Share trong bàn (7')
+### Sau khi share xong, chốt 3 ý chung
 
-### Mỗi người chỉ nói 4 thứ trong 90 giây
+**1. Bàn tôi thấy case nào có bằng chứng mạnh nhất? Vì sao?**
 
-1. **Case bạn chọn là gì**
-2. **Bằng chứng mạnh nhất bạn có là gì**
-3. **Điều gì đã thay đổi vĩnh viễn**
-4. **Verdict của bạn**
+> Sau khi nghe Khánh trình bày case Jasper, tôi vẫn thấy case Stack Overflow có bằng chứng mạnh hơn vì có cả dữ liệu hành vi developer dùng AI, mốc policy ban ChatGPT-generated content, và phản ứng chiến lược qua partnership/licensing với OpenAI. Case Jasper giúp tôi nhìn rõ hơn pattern "generic AI làm rẻ lớp tạo nội dung", còn Stack Overflow cho thấy rõ hơn việc entry point của cả workflow bị chuyển dịch.
 
-### Nếu chưa biết hỏi ngược gì, dùng 4 câu này
+**2. Có pattern nào lặp lại giữa nhiều case không?**
 
-1. **"Bằng chứng mạnh nhất cho nhận định đó là gì?"**
-2. **"Điều gì ở đây là triệu chứng, còn điều gì là thay đổi vĩnh viễn?"**
-3. **"Nếu switching cost từng cao, vì sao người dùng vẫn rời đi?"**
-4. **"Platform mới hoặc đối thủ mới đã chiếm entry point ở đâu?"**
+> Pattern lặp lại giữa Stack Overflow và Jasper là: lớp sản phẩm chỉ làm một bước phổ thông dễ bị generic AI kéo xuống thành commodity. Muốn sống tiếp, sản phẩm phải đi sâu hơn vào workflow, dữ liệu riêng, trust hoặc collaboration context.
 
-### Ghi nhanh khi nghe các bạn cùng bàn
+**3. Một cảnh báo cho chính dự án của nhóm tôi là gì?**
 
-| Người | Case | Bằng chứng mạnh nhất họ nêu | Điều họ cho là "thay đổi vĩnh viễn" | Verdict của họ |
-|---|---|---|---|---|
-| Bạn 1 | | | | |
-| Bạn 2 | | | | |
-| Bạn 3 | | | | |
-| Bạn 4 | | | | |
+> Nếu dự án của nhóm chỉ là nơi user hỏi đáp hoặc sinh nội dung phổ thông mà không có dữ liệu riêng, trust riêng hoặc workflow riêng, user có thể bỏ qua sản phẩm và dùng thẳng AI assistant.
 
-### Sau khi cả bàn share xong, chốt 3 ý chung
-
-**1. Bàn tôi thấy case nào có bằng chứng mạnh nhất? Vì sao?**  
-> _______________________________________________
-
-**2. Có pattern nào lặp lại giữa nhiều case không?**  
-Ví dụ: switching costs giảm, platform bước xuống app layer, user chuyển sang "làm xong giúp tôi", moat cũ quá mỏng…  
-> _______________________________________________
-
-**3. Một cảnh báo cho chính dự án của nhóm tôi là gì?**  
-> _______________________________________________
-
----
-
-## Bước 4 — Chốt lại verdict cá nhân sau thảo luận (3')
+## Bước 4 — Chốt lại verdict cá nhân sau thảo luận
 
 ### Sau khi nghe bàn phản biện, verdict của tôi:
 
-- [ ] Giữ nguyên
+- [x] Giữ nguyên, nhưng làm sắc hơn ở điểm "entry point + trust layer"
 - [ ] Đổi nhẹ
 - [ ] Đổi mạnh
 
 ### Vì sao tôi giữ / đổi verdict?
 
-> _______________________________________________  
-> _______________________________________________
+> Tôi giữ verdict "có nhưng phải đổi rất mạnh" vì Stack Overflow vẫn có tài sản lõi là tri thức kỹ thuật được cộng đồng kiểm chứng. Tuy nhiên, tài sản đó không còn tự động đảm bảo traffic và contribution như trước; nó phải được đưa vào workflow AI/editor/enterprise bằng cách có attribution, curation và trust rõ ràng.
 
 ### Verdict cuối cùng của tôi (phiên bản nộp)
 
-**Case này tổn thương trước AI vì:**  
-> _______________________________________________
+**Case này tổn thương trước AI vì:**
 
-**Điều thay đổi vĩnh viễn là:**  
-> _______________________________________________
+> Stack Overflow từng là entry point mặc định khi developer cần giải đáp vấn đề lập trình. ChatGPT và AI coding tools làm developer có thể hỏi ngay, nhận câu trả lời cá nhân hóa, và không cần public câu hỏi đơn giản lên forum. Điều này làm suy yếu flywheel hỏi đáp: ít câu hỏi phổ thông mới hơn, ít lý do ghé forum trước hơn, và cộng đồng phải xử lý thêm rủi ro AI-generated content.
 
-**Nếu phải rút 1 bài học cho dự án của nhóm mình, tôi rút ra:**  
-> _______________________________________________
+**Điều thay đổi vĩnh viễn là:**
 
----
+> Developer help đã chuyển từ search/public Q&A sang AI assistant có ngữ cảnh. Stack Overflow không mất hết giá trị, nhưng vai trò bền vững hơn là trust layer: nơi tri thức được kiểm chứng, được trích dẫn, được cấp phép, và được dùng để ground AI hoặc xử lý vấn đề kỹ thuật phức tạp.
+
+**Nếu phải rút 1 bài học cho dự án của nhóm mình, tôi rút ra:**
+
+> Đừng chỉ xây một kho câu trả lời hoặc chatbot chung chung. Dự án cần sở hữu ngữ cảnh, dữ liệu, trust và workflow cụ thể; nếu không, AI platform lớn có thể trở thành entry point chính và biến sản phẩm của mình thành nguồn dữ liệu phụ.
 
 ## Checklist trước khi nộp
 
-- [ ] Tôi đã chọn ít nhất 3 bằng chứng chốt có nguồn.
-- [ ] Mỗi nhận định đều chỉ vào ít nhất 1 bằng chứng.
-- [ ] Tôi đã ghi lại phần share trong bàn.
-- [ ] Tôi đã viết verdict cuối sau thảo luận.
-
----
-
-## Nếu còn thời gian / làm về nhà
-
-- Bổ sung thêm một case "đối thủ phản ứng tốt hơn" để so.
-- Thêm một đoạn ngắn: **nếu tôi là PM của case này trong 6 tháng đầu sau AI shock, tôi sẽ làm gì đầu tiên?**
-- Kiểm lại xem case này yếu vì expectation shift, competitive dynamics, hay cả hai cùng lúc.
+- [x] Tôi đã chọn ít nhất 3 bằng chứng chốt có nguồn.
+- [x] Mỗi nhận định đều chỉ vào ít nhất 1 bằng chứng.
+- [x] Tôi đã ghi lại phần share trong bàn.
+- [x] Tôi đã viết verdict cuối sau thảo luận trong bàn.
