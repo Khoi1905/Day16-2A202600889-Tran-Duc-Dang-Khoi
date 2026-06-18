@@ -1,18 +1,4 @@
-# Ngày 16 — Student Lab (V4)
-
-Phiên bản này giữ đúng nguyên tắc tối giản:
-
-- **1 file `README` để điều hướng**
-- **1 file cho Lab 1**
-- **1 file cho Lab 2**
-
-Ngoài ra, ở Lab 2 giảng viên sẽ gửi kèm thêm một **tài liệu tham khảo ngoài repo**:
-
-- `Strategyn_JTBD_Playbook.pdf`
-
-Quy tắc xuyên suốt: **không có bằng chứng = không có nhận định.**
-
----
+# Ngày 16 — Student Lab
 
 ## Hôm nay cần làm gì?
 
